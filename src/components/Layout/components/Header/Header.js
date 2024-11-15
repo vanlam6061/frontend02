@@ -8,7 +8,6 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
                     <svg width="118" height="42" alt="TikTok">
-                        {/* <g clipPath="url(#clip0)"></g> */}
                         <path
                             fill="#25F4EE"
                             d="M9.875 16.842v-1.119A9 9 0 0 0 8.7 15.64c-4.797-.006-8.7 3.9-8.7 8.708a8.7 8.7 0 0 0 3.718 7.134A8.68 8.68 0 0 1 1.38 25.55c0-4.737 3.794-8.598 8.495-8.707"
