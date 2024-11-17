@@ -5,19 +5,19 @@ import Upload from '@/pages/Upload/Upload';
 const publicRoutes = [
     {
         path: '/',
-        component: Home
+        element: <Home />
     },
     {
         path: '/following',
-        component: Following
+        element: <Following />
     },
     {
         path: '/profile',
-        component: Profile
+        element: <Profile />
     },
     {
         path: '/upload',
-        component: Upload
+        element: <Upload />
     }
 ];
 const privateRoutes = [];

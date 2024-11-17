@@ -1,5 +1,5 @@
-function following() {
-    return console.log('aa');
+function Following() {
+    <h2>Following</h2>;
 }
 
-export default following;
+export default Following;
