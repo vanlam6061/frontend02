@@ -11,13 +11,12 @@ import { useEffect, useState } from 'react';
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResults, setSearchResults] = useState([]);
-    useEffect(
-        () =>
-            setTimeout(() => {
-                setSearchResults([2, 3]);
-            }, 3000),
-        []
-    );
+    useEffect(() => {
+        setTimeout(() => {
+            setSearchResults([1, 2, 3]);
+        }, 1000);
+    }, []);
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
