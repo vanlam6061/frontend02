@@ -7,6 +7,7 @@ import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
+import { Wrapper as PopperWrapper } from '@/components/Popper';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -23,10 +24,11 @@ function Header() {
                 <img src={images.logo} alt="Tiktok" />
 
                 <Tippy
+                    interactive
                     visible={searchResults.length > 0}
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            Kết quả
+                            <PopperWrapper>Kết quả</PopperWrapper>
                         </div>
                     )}
                 >
