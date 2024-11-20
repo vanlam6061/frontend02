@@ -8,6 +8,7 @@ import 'tippy.js/dist/tippy.css';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
+import AccountItem from '@/components/AccountItem';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -28,7 +29,13 @@ function Header() {
                     visible={searchResults.length > 0}
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>Kết quả</PopperWrapper>
+                            <PopperWrapper>
+                                <h4 className={cx('search-title')}>Accounts</h4>
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                            </PopperWrapper>
                         </div>
                     )}
                 >
