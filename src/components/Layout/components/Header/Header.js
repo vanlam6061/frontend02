@@ -54,7 +54,6 @@ function Header() {
                 </Tippy>
                 <div className={cx('actions')}>
                     <Button
-                        className={cx('bfg')}
                         primary
                         onClick={() => {
                             alert('Clicked !!!');
