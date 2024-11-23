@@ -6,7 +6,8 @@ import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 
 const cx = classNames.bind(styles);
-function Menu({ children }) {
+function Menu({ children, items = [] }) {
+    const renderItems = items.map((item, index) => {});
     return (
         <Tippy
             interactive
