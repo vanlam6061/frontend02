@@ -64,7 +64,7 @@
     }
 }
 
-.clear-btn,
+.clear,
 .loading {
     position: absolute;
     right: calc(var(--search-button-width) + 16px);
@@ -100,4 +100,5 @@
     font-size: 2rem;
     margin-left: 28px;
     background-color: transparent;
+    padding: 4px 8px;
 }

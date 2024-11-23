@@ -1,15 +1,15 @@
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.module.scss';
 import Header from '@/components/Layout/components/Header/Header';
-import Sidebar from './Sidebar';
+import { PagesSharp } from '@mui/icons-material';
 
 const cx = classNames.bind(styles);
-function DefaultLayout() {
+function DefaultLayout({ page }) {
     return (
         <div className={cx('wrapper')}>
             <Header />
             <div className={cx('container')}>
-                <Sidebar />
+                {page}
                 <div className={cx('content')}></div>
             </div>
         </div>

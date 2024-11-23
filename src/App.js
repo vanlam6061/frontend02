@@ -7,8 +7,10 @@ function App() {
             <Routes>
                 {publicRoutes.map((route, index) => {
                     const Layout = DefaultLayout;
+                    let Page = route.element;
+                    console.log(route.element);
 
-                    return <Route key={index} path={route.path} element={<Layout />} />;
+                    return <Route key={index} path={route.path} element={<Layout page={route.element} />} />;
                 })}
             </Routes>
         </Router>

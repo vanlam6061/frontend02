@@ -5,13 +5,22 @@ import images from '@/assets/images/index.js';
 
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faSignIn, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faSignIn, faEllipsisVertical, faEarthAsia } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 import AccountItem from '@/components/AccountItem';
 import Button from '@/components/Button';
 
+import Menu from '@/components/Popper/Menu';
+
 const cx = classNames.bind(styles);
+const MENU = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'Languages'
+    }
+];
+
 function Header() {
     const [searchResults, setSearchResults] = useState([]);
     useEffect(() => {
@@ -27,7 +36,7 @@ function Header() {
 
                 <Tippy
                     interactive
-                    visible={searchResults.length > 0}
+                    // visible={searchResults.length > 0}
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
@@ -64,9 +73,11 @@ function Header() {
                     <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Log in
                     </Button>
-                    <Button className={cx('more-btn')}>
-                        <FontAwesomeIcon icon={faEllipsisVertical} />
-                    </Button>
+                    <Menu>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
