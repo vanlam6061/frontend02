@@ -5,7 +5,7 @@ import images from '@/assets/images/index.js';
 
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faSignIn, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 import AccountItem from '@/components/AccountItem';
@@ -54,12 +54,18 @@ function Header() {
                 </Tippy>
                 <div className={cx('actions')}>
                     <Button
-                        primary
+                        text
                         onClick={() => {
                             alert('Clicked !!!');
                         }}
                     >
+                        Upload
+                    </Button>
+                    <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Log in
+                    </Button>
+                    <Button className={cx('more-btn')}>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
                     </Button>
                 </div>
             </div>
