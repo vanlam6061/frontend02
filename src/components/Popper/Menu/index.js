@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
+import Header from './Header';
 const cx = classNames.bind(styles);
 function Menu({ children, items = [] }) {
     const renderItems = () => {
@@ -16,7 +17,10 @@ function Menu({ children, items = [] }) {
             // visible={searchResults.length > 0}
             render={(attrs) => (
                 <div className={cx('menu-items')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('menu-popper')}>{renderItems()}</PopperWrapper>
+                    <PopperWrapper className={cx('menu-popper')}>
+                        <Header title={'English'} />
+                        {renderItems()}
+                    </PopperWrapper>
                 </div>
             )}
         >
