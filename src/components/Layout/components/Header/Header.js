@@ -20,7 +20,7 @@ import { Wrapper as PopperWrapper } from '@/components/Popper';
 import AccountItem from '@/components/AccountItem';
 import Button from '@/components/Button';
 
-import Menu from '@/components/Popper/Menu';
+import Menu from '@/components/Popper/Menu/index.js';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -91,7 +91,7 @@ function Header() {
                     <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Log in
                     </Button>
-                    <Menu item={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
