@@ -6,6 +6,7 @@ import styles from './Menu.module.scss';
 import Header from './Header';
 const cx = classNames.bind(styles);
 function Menu({ children, items = [] }) {
+    const [history, setHistory] = useState([{ data: subMenu }]);
     const renderItems = () => {
         return items.map((item, index) => <MenuItem key={index} data={item} />);
     };
