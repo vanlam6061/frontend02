@@ -1,4 +1,6 @@
 import Tippy from '@tippyjs/react/headless';
+import { useState } from 'react';
+
 import classNames from 'classnames/bind';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 import MenuItem from './MenuItem';
@@ -6,9 +8,23 @@ import styles from './Menu.module.scss';
 import Header from './Header';
 const cx = classNames.bind(styles);
 function Menu({ children, items = [] }) {
-    const [history, setHistory] = useState([{ data: subMenu }]);
+    const [history, setHistory] = useState([{ data: items }]);
+    const current = history[history.length - 1];
     const renderItems = () => {
-        return items.map((item, index) => <MenuItem key={index} data={item} />);
+        return current.data.map((item, index) => {
+            const isParent = !!item.children;
+            return (
+                <MenuItem
+                    key={index}
+                    data={item}
+                    onClick={() => {
+                        if (isParent) {
+                            setHistory((prev =>[...prev, item.children])
+                        }
+                    }}
+                />
+            );
+        });
     };
     return (
         <Tippy
