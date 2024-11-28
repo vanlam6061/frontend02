@@ -9,7 +9,9 @@ import Header from './Header';
 const cx = classNames.bind(styles);
 function Menu({ children, items = [] }) {
     const [history, setHistory] = useState([{ data: items }]);
+    console.log(history);
     const current = history[history.length - 1];
+    console.log(current);
     const renderItems = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
@@ -19,7 +21,7 @@ function Menu({ children, items = [] }) {
                     data={item}
                     onClick={() => {
                         if (isParent) {
-                            setHistory((prev =>[...prev, item.children])
+                            setHistory((prev) => [...prev, item.children]);
                         }
                     }}
                 />
